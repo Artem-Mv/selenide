@@ -13,8 +13,10 @@ public class CardTests {
         $x("//input[@name='phone']").setValue("+79012345678");
         $x("//span[@class='checkbox__box']").click();
         $x("//span[@class='button__text']").click();
+        
         boolean actualResult = $x("//*[contains(text(), 'успешно')]").isDisplayed();
-
+        closeWebDriver();
+        
         assertTrue(actualResult);
     }
 }
