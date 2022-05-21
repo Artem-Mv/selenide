@@ -8,11 +8,13 @@ public class CardTests {
     void cardOrderPositiveTest(){
 
         open("http://localhost:9999/");
-
+Thread.sleep(200);
+        
         $x("//input[@class='input__control']").setValue("Имя Фамилия");
         $x("//input[@name='phone']").setValue("+79012345678");
         $x("//span[@class='checkbox__box']").click();
         $x("//span[@class='button__text']").click();
+Thread.sleep(200);
         boolean actualResult = $x("//*[contains(text(), 'успешно')]").isDisplayed();
 
         assertTrue(actualResult);
