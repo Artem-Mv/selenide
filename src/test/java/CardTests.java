@@ -15,7 +15,6 @@ public class CardTests {
         $x("//span[@class='button__text']").click();
         
         boolean actualResult = $x("//*[contains(text(), 'успешно')]").isDisplayed();
-        closeWebDriver();
         
         assertTrue(actualResult);
     }
