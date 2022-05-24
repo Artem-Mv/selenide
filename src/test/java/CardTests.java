@@ -1,7 +1,6 @@
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Selenide.*;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class CardTests {
     @Test
@@ -12,8 +11,6 @@ public class CardTests {
         $x("//input[@name='phone']").setValue("+79012345678");
         $x("//span[@class='checkbox__box']").click();
         $x("//span[@class='button__text']").click();
-        boolean actualResult = $x("//*[contains(text(), 'успешно')]").isDisplayed();
-
-        assertTrue(actualResult);
+        $x("//*[contains(text(), 'успешно')]").shouldBe(Condition.visible);
     }
 }
